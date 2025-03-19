@@ -60,13 +60,13 @@ Para poder obtener la última versión de Proxmox VE:
 
 Una vez tenemos la imagen ISO descargada, debemos crear un medio de instalación con un USB, mediante rufus o herramientas similares:
 
-![[Imagenes/Rufus.jpg]]
+![RUFUS](Imagenes/Rufus.jpg)
 
 ### Instalación de Proxmox VE
 
 Seguidamente instalamos el USB en el servidor dónde queremos instalar PROXMOX y seleccionamos el USB como método de arranque desde nuestra BIOS o UEFI. Para acceder al menú de arranque es importante mirar la marca de nuestra placa base ya que dependiendo de un modelo u otro la tecla para acceder al menú de arranque puede variar (F2, F9, Del).
 
-![[Imagenes/InstalacionProxmox.jpg]]
+![Instalación Proxmox](Imagenes/InstalacionProxmox.jpg)
 
 
 ***Se recomienda realizar una instalación mediante GUI ya que es más intuitiva y fácil de interpretar. Para realizarlo desde terminal se precisan conocimientos más avanzados***
