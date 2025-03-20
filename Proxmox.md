@@ -121,62 +121,62 @@ Accedemos a nuestro entorno de proxmox `https://<ip>:8006`
 
 Accedemos a nuestro nodo:
 
-![[Imagenes/VM1.jpg]]
+![Nodo](Imagenes/VM1.jpg)
 
 
 **Paso 3:** 
 
 Accedemos a la parte de "Create VM":
 
-![[Imagenes/VM2.jpg]]
+![Create VM](Imagenes/VM2.jpg)
 
 
 **Paso 4:**
 
 Se abrirá una ventana dentro del entorno para configurar la creación de nuestra máquina virtual:
 
-![[Imagenes/VM3.jpg]]
+![VM1](Imagenes/VM3.jpg)
 
 
 Seguidamente configuramos el sistema operativo de nuestra VM mediante una imagen ISO:
 
-![[Imagenes/VM4.jpg]]
+![VM2](Imagenes/VM4.jpg)
 
 
 **Proxmox trae por defecto ciertas imágenes ISO configuradas en el sistema, si queremos cargar o añadir una ISO adiiconal debemos hacerlo de la siguiente manera:**
 
-![[Imagenes/VM5.jpg]]
+![VM3](Imagenes/VM5.jpg)
 
 
 En mi caso crearé una VM con una imagen de Kali Linux:
 
 Le damos a siguiente hasta llegar a esta ventana de configuración:
 
-![[Imagenes/VM6.jpg]]
+![VM4](Imagenes/VM6.jpg)
 
 
 En esta sección, dependiendo de los sockets de nuestra CPU y núcleos podemos configurar un valor u otro. Si añadimos más núcleos y sockets a la VM, esta tendrá mayor velocidad de procesamiento.
 
 Seguidamente debemos configurar la memoria RAM, otro parámetro que dependerá de las capacidades de nuestro servidor y las que le queramos asignar a la VM:
 
-![[Imagenes/VM7.jpg]]
+![VM5](Imagenes/VM7.jpg)
 
 
 Seguidamente en la configuración de red podemos escoger si la máquina debe disponer de FW o no, entre otras configuraciones las cuales recomiendo no modificar:
 
-![[Imagenes/VM8.jpg]]
+![VM6](Imagenes/VM8.jpg)
 
 
 Una vez configurados los pasos anteriores, podremos visualizar la configuración predefinida para nuestra VM en la siguiente ventana:
 
-![[Imagenes/VM9.jpg]]
+![VM7](Imagenes/VM9.jpg)
 
 
 Si le damos a **Finish** la VM se creará y podremos ejecutarla.
 
 Finalmente podremos ver nuestra máquina creada dentro de nuestro nodo:
 
-![[Imagenes/VM10.jpg]]
+![VM Created](Imagenes/VM10.jpg)
 
 
 ## Creación de un contenedor (LXC)
@@ -186,20 +186,20 @@ Para crear un contenedor en Proxmox, los pasos son muy similares a los de crear 
 **Paso 1:**
 Accedemos a nuestro nodo de Proxmox
 
-![[Imagenes/VM1.jpg]]
+![CT1](Imagenes/VM1.jpg)
 
 **Paso 2:**
 
 Accedemos a la sección de Create CT:
 
-![[Imagenes/VM2.jpg]]
+![CT2](Imagenes/VM2.jpg)
 
 
 **Paso 3:**
 
 Se nos abrirá una ventana, similar a la de la creación de VM, pero un poco distinta:
 
-![[Imagenes/CT1.jpg]]
+![CT3](Imagenes/CT1.jpg)
 
 
 Aquí debemos configurar el hostname para nuestro contenedor y una contraseña para poder acceder al entorno.
@@ -209,7 +209,7 @@ Si se precisa, se puede configurar una clave pública mediante SSH que debemos c
 
 Configurar plantilla del LXC
 
-![[Imagenes/CT2.jpg]]
+![CT4](Imagenes/CT2.jpg)
 
 
 En este caso, solo podemos escoger como plantilla la que se visualiza en pantalla, debido a que LXC dentro de proxmox solo puede correr mediante esa plantilla.
@@ -218,21 +218,21 @@ En este caso, solo podemos escoger como plantilla la que se visualiza en pantall
 
 Seguidamente configuramos el almacenamiento de nuestro LXC, al ser un contenedor que ofrecerá servicios dedicados, no se precisa asignar tanto almacenamiento como en una Máquina Virtual.
 
-![[Imagenes/CT3.jpg]]
+![CT5](Imagenes/CT3.jpg)
 
 
 **Paso 6:**
 
 En este paso, debemos configurar los cores que queremos que tenga nuestro LXC, teniendo en cuenta los núcleos de los que dispone nuestro procesador y los que queramos asignar para este contenedor:
 
-![[Imagenes/CT4.jpg]]
+![CT6](Imagenes/CT4.jpg)
 
 
 **Paso 7:**
 
 Ahora configuramos la memoria RAM, tal y como lo hemos hecho en la sección de creación de una VM:
 
-![[Imagenes/CT5.jpg]]
+![CT7](Imagenes/CT5.jpg)
 
 
 **Paso 8:**
@@ -240,21 +240,21 @@ Ahora configuramos la memoria RAM, tal y como lo hemos hecho en la sección de c
 Seguidamente configuramos los parámetros de red, si queremos que nuestro LXC disponga de una IP estática o se asigne una IP mediante el DHCP de nuestro router, debemos configurarlo correctamente.
 **Recomiendo que se asigne mediante DHCP**
 
-![[Imagenes/CT6.jpg]]
+![CT8](Imagenes/CT6.jpg)
 
 
 **Paso 9:**
 
 Seguidamente configuramos los servidores DNS a los que se conectará el contenedor, principalmente recomiendo usar los DNS de Google, esto ya es a elección propia.
 
-![[Imagenes/CT7.jpg]]
+![CT9](Imagenes/CT7.jpg)
 
 
 **Paso 10:**
 
 Finalmente se nos mostrará una ventana con todas las configuraciones seleccionadas para la creación de nuestro LXC:
 
-![[Imagenes/CT8.jpg]]
+![CT10](Imagenes/CT8.jpg)
 
 
 Si le damos a finalizar, se configurará y creará nuestro LXC, una vez creado podremos visualizarlo en nuestro nodo.
@@ -474,7 +474,7 @@ Cada nodo en Proxmox VE debe tener una IP estática y los nombres deben resolver
 Se recomienda configurar el archivo **/etc/hosts** dentro de cada nodo.
 
 Para acceder a la consola de un nodo en Proxmox debemos hacerlo desde aquí:
-![[Imagenes/Cluster1.jpg]]
+![Cluster1](Imagenes/Cluster1.jpg)
 
 
 En mi caso dispongo de un solo nodo, pero si queremos crear un nuevo nodo y queremos que se comuniquan entre sí es importante configurar el archivo /etc/hosts añadiendo la dirección IP de cada Cluster
